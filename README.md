@@ -143,6 +143,24 @@ conn.upload('my_awesome_key.zip',f,bucket='sample_bucket',
 For more information, see [Amazon's S3 Documentation](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html)
 
 
+Downloading files from S3
+-------------------------
+
+```python
+# Get one file from a specified bucket
+conn.get('my_awesome_key.zip','sample_bucket')
+
+```
+Params:
+   - key           The key to get
+   - bucket        (Optional) The name of the bucket to use
+            (can be skipped if setting the default_bucket)
+   - headers       (Optional) Additional headers of the request
+   
+Returns:
+   - A response object from the requests lib or a future that wraps
+     that response object if used with a pool.
+
 Copy keys inside/between buckets
 --------------------------------
 
